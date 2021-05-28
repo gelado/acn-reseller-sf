@@ -29,7 +29,7 @@ server.post('Subscribe', server.middleware.https, function (req, res, next) {
         resellerForm.name.error = "Por favor preencha o nome completo";
     }
 
-    if (!resellerForm.valid) {
+    if (resellerForm.valid) {
         transaction.wrap(function () {
             var newSubscribe = customObjMgr.createCustomObject('Reseller', resellerForm.cpf.value);
             newSubscribe.custom.cpf = resellerForm.cpf.value;
