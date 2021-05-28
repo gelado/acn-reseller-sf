@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<form xmlns="http://www.demandware.com/xml/form/2008-04-19">
+  <field formid="name" label="profile.name" type="string" mandatory="true" binding="name" max-length="50" missing-error="error.message.missing.name" required="" />
+
+  <field formid="cpf" label="profile.cnpj" type="string" mandatory="true" binding="cnpj" max-length="50" missing-error="error.message.missing.cpf" required="" />
+
+  <field formid="phone" label="profile.phone" mandatory="true"
+			regexp="^(?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)?(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))$"
+			missing-error="error.message.required"
+			parse-error="error.message.missing.phone"
+			type="string"/> 
+
+  <field formid="email" label="profile.email" type="string" mandatory="true" binding="email" max-length="50" regexp="^[\w.%+-]+@[\w.-]+\.[\w]{2,6}$" missing-error="error.message.missing.email" parse-error="error.message.parse.email.profile.form" range-error="error.message.50orless" value-error="ValueErrorText" required="" /> 
+
+</form>
